@@ -7,7 +7,6 @@ public class PersonManager {
     public List<Person> personList = new ArrayList<>();
 
     public PersonManager() {
-
     }
 
     public void addPerson(Person person) {
@@ -18,10 +17,18 @@ public class PersonManager {
         personList.remove(person);
     }
 
-    public void printAll() {
+    public void printName() {
         for (Person person : personList) {
             System.out.println("\nfirst name: " + person.firstName + "\nsecond name: " + person.secondName);
         }
+    }
+
+    public void printAll() {
+        for (Person person : personList) {
+            //System.out.println("\nfirst name: " + person.firstName + "\nsecond name: " + person.secondName);
+            System.out.println(person.toString());
+        }
+
     }
 
 }
