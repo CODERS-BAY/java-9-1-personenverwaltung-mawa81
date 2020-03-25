@@ -3,21 +3,40 @@ package com.codersbay;
 public class Person {
     public String firstName;
     public String secondName;
-    public String birthdayDate;
+    public Integer age;
     public String address;
     public String gender;
 
-    public Person(String firstName, String secondName, String birthdayDate, String address, String gender) {
+    public Person(String firstName, String secondName, Integer age, String address, String gender) {
         this.firstName = firstName;
         this.secondName = secondName;
-        this.birthdayDate = birthdayDate;
+        this.age = age;
         this.address = address;
         this.gender = gender;
+    }
+
+    public Person(String firstName, String secondName, Integer age) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = age;
+        this.address = "Unknown";
+        this.gender = "Unknown";
+    }
+
+    public Person(String firstName, String secondName) {
+        this.firstName = firstName;
+        this.secondName = secondName;
+        this.age = null;
+        this.address = "Unknown";
+        this.gender = "Unknown";
     }
 
     public Person() {
         this.firstName = "Unknown";
         this.secondName = "Unknown";
+        this.age = null;
+        this.address = "Unknown";
+        this.gender = "Unknown";
     }
 
     @Override
@@ -29,7 +48,7 @@ public class Person {
 
         if (firstName != null ? !firstName.equals(person.firstName) : person.firstName != null) return false;
         if (secondName != null ? !secondName.equals(person.secondName) : person.secondName != null) return false;
-        if (birthdayDate != null ? !birthdayDate.equals(person.birthdayDate) : person.birthdayDate != null)
+        if (age != null ? !age.equals(person.age) : person.age != null)
             return false;
         if (address != null ? !address.equals(person.address) : person.address != null) return false;
         return gender != null ? gender.equals(person.gender) : person.gender == null;
@@ -39,7 +58,7 @@ public class Person {
     public int hashCode() {
         int result = firstName != null ? firstName.hashCode() : 0;
         result = 31 * result + (secondName != null ? secondName.hashCode() : 0);
-        result = 31 * result + (birthdayDate != null ? birthdayDate.hashCode() : 0);
+        result = 31 * result + (age != null ? age.hashCode() : 0);
         result = 31 * result + (address != null ? address.hashCode() : 0);
         result = 31 * result + (gender != null ? gender.hashCode() : 0);
         return result;
@@ -50,7 +69,7 @@ public class Person {
         return "Person{" +
                 "firstName='" + firstName + '\'' +
                 ", secondName='" + secondName + '\'' +
-                ", birthdayDate='" + birthdayDate + '\'' +
+                ", age='" + age + '\'' +
                 ", address='" + address + '\'' +
                 ", gender='" + gender + '\'' +
                 '}';
